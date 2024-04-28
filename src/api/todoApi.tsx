@@ -72,10 +72,6 @@ axiosInstance.interceptors.request.use(config => {
   return config;
 });
 
-axiosInstance.interceptors.response.use(response => {
-  console.log(response, 'RESPONSE')
-  return response;
-});
 
 export const { useGetTodosQuery, useAddTodoMutation, useDeleteTodoMutation, useUpdateTodoMutation } = todoApi;
 
