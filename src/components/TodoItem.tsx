@@ -11,10 +11,10 @@ interface TodoItemProps {
 const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
 
     const [deleteTodo] = useDeleteTodoMutation();
-  const [updateTodo] = useUpdateTodoMutation();
+    const [updateTodo] = useUpdateTodoMutation();
 
     const handleCheckboxChange = () => {
-        updateTodo({ id: todo._id, updatedData: {completed: !todo.completed, title: todo.title} });
+        updateTodo({ id: todo._id, updatedData: { completed: !todo.completed, title: todo.title } });
     }
 
     const handleDelete = () => {
