@@ -9,7 +9,9 @@ import axios from 'axios';
 function App() {
 
   const refreshToken = (): Promise<string> => {
-    return fetch('http://localhost:3000/refresh/token')
+    return fetch('http://localhost:3000/refresh/token',{
+      credentials: 'include', 
+    })
       .then((res) => res.json())
       .then((data) => {
         return data.token;
@@ -31,7 +33,9 @@ function App() {
 
 
   useEffect(() => {
-    fetch('http://localhost:3000/login')
+    fetch('http://localhost:3000/login',{
+      credentials: 'include', 
+    })
       .then((res) => res.json())
       .then((data) => {
         localStorage.setItem('token', data.token);

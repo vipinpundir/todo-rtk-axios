@@ -65,6 +65,7 @@ export const todoApi = createApi({
 
 axiosInstance.interceptors.request.use(config => {
   const authToken = localStorage.getItem('token');
+  console.log(authToken)
   if (authToken) {
     config.headers.Authorization = `${authToken}`;
   }
